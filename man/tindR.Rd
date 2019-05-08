@@ -4,10 +4,12 @@
 \alias{tindR}
 \title{Swipe on the columns of your data frame}
 \usage{
-tindR(df)
+tindR(df, by = NULL)
 }
 \arguments{
 \item{df}{the data frame to select columns from}
+
+\item{by}{optional column to group by}
 }
 \description{
 Select columns from a data frame in an interactive manner
