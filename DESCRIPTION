@@ -1,0 +1,13 @@
+Package: tindR
+Title: Interactive selection of columns in a data frame
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Michał",
+           family = "Pastuszka",
+           role = c("aut", "cre"),
+           email = "m.pastuszka@student.mini.pw.edu.pl")
+Description: This package provides an interactive way of droping chosen columns from data frames. It displays summary information about each of the columns and prompts the user wheter to preserve it or not.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
