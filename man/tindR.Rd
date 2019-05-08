@@ -6,6 +6,9 @@
 \usage{
 tindR(df)
 }
+\arguments{
+\item{df}{the data frame to select columns from}
+}
 \description{
 Select columns from a data frame in an interactive manner
 }

@@ -2,8 +2,7 @@
 #'
 #'@description Select columns from a data frame in an interactive manner
 #'
-#'@params df the data frame to select columns from
-#'
+#'@param df the data frame to select columns from
 #'
 #'@export
 tindR <- function(df){
@@ -13,15 +12,12 @@ tindR <- function(df){
     if(is.numeric(df[,i])){
       boxplot(df[,i])
     }
-    print(summary(df[,i]))
-    doDrop <- readline(prompt = "Keep this column? [y/n]")
-    doDrop <- tolower(doDrop)
-    if(doDrop == "n"){
+    print((summary(df[,i])))
+    doKeep <- readline(prompt = "Keep this column? [y/n]")
+    doKeep <- tolower(doKeep)
+    if(doKeep == "y"){
       dropvector <- c(dropvector, i)
     }
-  }
-  if(length(dropvector == 0)){
-    dropvector <- 1:ncol(df)
   }
   df[,dropvector]
 }
