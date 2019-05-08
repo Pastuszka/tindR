@@ -5,6 +5,8 @@
 #'@param df the data frame to select columns from
 #'@param by optional column to group by
 #'
+#'@importFrom graphics boxplot par plot
+#'
 #'@export
 tindR <- function(df, by=NULL){
   stopifnot(is.data.frame(df))
@@ -16,9 +18,11 @@ tindR <- function(df, by=NULL){
     }
   }
   for(i in 1:ncol(df)){
-    if(i == by){
-      dropvector <- c(dropvector, by)
-      next
+    if(!is.null(by)){
+      if(i==by){
+        dropvector <- c(dropvector, by)
+        next
+      }
     }
     if(is.numeric(df[,i])){
       if(!is.null(by)){
@@ -26,7 +30,6 @@ tindR <- function(df, by=NULL){
         plot(df[,i], df[,by])
       }else{
         boxplot(df[,i])
-        plot(df[,i])
       }
     }
     print((summary(df[,i])))

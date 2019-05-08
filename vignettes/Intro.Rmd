@@ -16,9 +16,9 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(tindR)
-df <- data.frame(a=c("a","b"), b=c(1,2))
+df <- data.frame(a=c(3,4), b=c(1,2),c= c("a", "b"))
 ```
 
 ```{r}
-new <- tindR(df)
+ new <- tindR(df, "c")
 ```
