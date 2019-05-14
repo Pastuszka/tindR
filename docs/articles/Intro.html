@@ -80,16 +80,27 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tindR)</a>
-<a class="sourceLine" id="cb1-2" title="2">df &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/data.frame">data.frame</a></span>(<span class="dt">a=</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">3</span>,<span class="dv">4</span>), <span class="dt">b=</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="dt">c=</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>))</a></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"> new &lt;-<span class="st"> </span><span class="kw"><a href="../reference/tindR.html">tindR</a></span>(df, <span class="st">"c"</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tindR)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new &lt;-<span class="st"> </span><span class="kw"><a href="../reference/tindR.html">tindR</a></span>(iris, <span class="st">"Species"</span>)</code></pre></div>
 <p><img src="Intro_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
-<pre><code>#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-#&gt;    3.00    3.25    3.50    3.50    3.75    4.00 
+<pre><code>#&gt; [1] "Sepal.Length"
+#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#&gt;   4.300   5.100   5.800   5.843   6.400   7.900 
 #&gt; Keep this column? [y/n]</code></pre>
 <p><img src="Intro_files/figure-html/unnamed-chunk-2-2.png" width="700"></p>
-<pre><code>#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-#&gt;    1.00    1.25    1.50    1.50    1.75    2.00 
+<pre><code>#&gt; [1] "Sepal.Width"
+#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#&gt;   2.000   2.800   3.000   3.057   3.300   4.400 
+#&gt; Keep this column? [y/n]</code></pre>
+<p><img src="Intro_files/figure-html/unnamed-chunk-2-3.png" width="700"></p>
+<pre><code>#&gt; [1] "Petal.Length"
+#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#&gt;   1.000   1.600   4.350   3.758   5.100   6.900 
+#&gt; Keep this column? [y/n]</code></pre>
+<p><img src="Intro_files/figure-html/unnamed-chunk-2-4.png" width="700"></p>
+<pre><code>#&gt; [1] "Petal.Width"
+#&gt;    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#&gt;   0.100   0.300   1.300   1.199   1.800   2.500 
 #&gt; Keep this column? [y/n]</code></pre>
   </div>
 
