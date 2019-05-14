@@ -5,6 +5,8 @@
 #'@param df the data frame to select columns from
 #'@param by optional column to group by
 #'
+#'@importFrom graphics boxplot par plot
+#'
 #'@export
 tindR <- function(df, by=NULL){
   stopifnot(is.data.frame(df))
@@ -35,8 +37,8 @@ tindR <- function(df, by=NULL){
     print((summary(df[,i])))
     doKeep <- readline(prompt = "Keep this column? [y/n]")
     doKeep <- tolower(doKeep)
-    if(doKeep %in% c("y", "yes", "yea", "tak", "ja", "hai", "ja, natürlich", "yup", "defo", "definitely", "of course", "はい", "是",
-                     "da", "да", "sí", "si", "oui", "예")){
+    if(doKeep %in% c("y", "yes", "yea", "tak", "ja", "hai", "ja, natürlich", "yup", "defo", "definitely", "of course",
+                     "da", "si", "oui")){
       dropvector <- c(dropvector, i)
     }
   }
