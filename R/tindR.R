@@ -9,30 +9,34 @@
 tindR <- function(df, by=NULL){
   stopifnot(is.data.frame(df))
   dropvector <- c()
+  par(mfrow=c(1,2))
   if(!is.null(by)){
-    par(mfrow=c(1,2))
     if(is.character(by)){
       by <- which(colnames(df) == by)
     }
   }
   for(i in 1:ncol(df)){
     if(i == by){
-      dropvector <- c(dropvector, by)
+      dropvector <- c(dropvector, i)
       next
     }
     if(is.numeric(df[,i])){
       if(!is.null(by)){
-        boxplot(df[,i] ~ df[,by])
-        plot(df[,i], df[,by])
+        if(is.factor(df[,by])){
+          boxplot(df[,i] ~ df[,by])
+        }else {
+          plot(df[,i] ~ df[,by])
+        }
       }else{
         boxplot(df[,i])
-        plot(df[,i])
       }
     }
+    print(colnames(df)[i])
     print((summary(df[,i])))
     doKeep <- readline(prompt = "Keep this column? [y/n]")
     doKeep <- tolower(doKeep)
-    if(doKeep == "y"){
+    if(doKeep %in% c("y", "yes", "yea", "tak", "ja", "hai", "ja, natürlich", "yup", "defo", "definitely", "of course", "はい", "是",
+                     "da", "да", "sí", "si", "oui", "예")){
       dropvector <- c(dropvector, i)
     }
   }

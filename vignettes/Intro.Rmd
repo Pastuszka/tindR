@@ -16,9 +16,9 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(tindR)
-df <- data.frame(a=c("a","b"), b=c(1,2))
+df <- iris
 ```
 
 ```{r}
-new <- tindR(df)
+new <- tindR(df, "Species")
 ```
