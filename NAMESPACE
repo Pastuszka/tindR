@@ -2,5 +2,4 @@
 
 export(tindR)
 importFrom(graphics,boxplot)
-importFrom(graphics,par)
 importFrom(graphics,plot)
