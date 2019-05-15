@@ -11,25 +11,23 @@
 tindR <- function(df, by=NULL){
   stopifnot(is.data.frame(df))
   dropvector <- c()
-  if(!is.null(by)){
-    if(is.character(by)){
-      by <- which(colnames(df) == by)
-    }
+  if(!is.null(by) && is.character(by)){
+    by <- which(colnames(df) == by)
   }
   for(i in 1:ncol(df)){
-    if(i == by){
+    if(!is.null(by) && i == by){
       dropvector <- c(dropvector, i)
       next
     }
     if(is.numeric(df[,i])){
       if(!is.null(by)){
         if(is.factor(df[,by])){
-          boxplot(df[,i] ~ df[,by])
+          boxplot(df[,i] ~ df[,by], ylab=colnames(df)[i], xlab=colnames(df)[by])
         }else {
-          plot(df[,i] ~ df[,by])
+          plot(df[,i] ~ df[,by], ylab=colnames(df)[i], xlab=colnames(df)[by])
         }
       }else{
-        boxplot(df[,i])
+        boxplot(df[,i], ylab=colnames(df)[i])
       }
     }
     print(colnames(df)[i])
